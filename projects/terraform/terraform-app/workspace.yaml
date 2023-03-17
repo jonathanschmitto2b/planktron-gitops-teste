@@ -1,0 +1,15 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: ws-53ade5fb-0fca-4675-89ef-f1eed221c223
+  annotations:
+    crossplane.io/external-name: terraform-app
+spec:
+  forProvider:
+    source: Remote
+    module: git::https://github.com/jonathanschmitto2b/planktron-gitops-teste.git//projects/terraform/terraform-app/tf?ref=main
+  providerConfigRef:
+    name: app-53ade5fb-0fca-4675-89ef-f1eed221c223
+  writeConnectionSecretToRef:
+    namespace: 4717e423-5c93-4954-84d6-cce885f620b3
+    name: output-53ade5fb-0fca-4675-89ef-f1eed221c223
